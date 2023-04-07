@@ -1,0 +1,61 @@
+// --- all fonts for the project ---
+
+@font-face {
+  font-family: "Kaushan Script";
+  font-display: swap;
+  src: url("../fonts/KaushanScript-Regular.woff2") format("woff2"),
+    url("../fonts/KaushanScript-Regular.woff") format("woff"),
+    url("../fonts/KaushanScript-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kosugi";
+  font-display: swap;
+  src: url("../fonts/Kosugi-Regular.woff2") format("woff2"),
+    url("../fonts/Kosugi-Regular.woff") format("woff"),
+    url("../fonts/Kosugi-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  font-display: swap;
+  src: url("../fonts/Quicksand-Regular.woff2") format("woff2"),
+    url("../fonts/Quicksand-Regular.woff") format("woff"),
+    url("../fonts/Quicksand-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  font-display: swap;
+  src: url("../fonts/Quicksand-Medium.woff2") format("woff2"),
+    url("../fonts/Quicksand-Medium.woff") format("woff"),
+    url("../fonts/Quicksand-Medium.ttf") format("ttf");
+  font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  font-display: swap;
+  src: url("../fonts/Quicksand-Bold.woff2") format("woff2"),
+    url("../fonts/Quicksand-Bold.woff") format("woff"),
+    url("../fonts/Quicksand-Bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  font-display: swap;
+  src: url("../fonts/Quicksand-SemiBold.woff2") format("woff2"),
+    url("../fonts/Quicksand-SemiBold.woff") format("woff"),
+    url("../fonts/Quicksand-SemiBold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}

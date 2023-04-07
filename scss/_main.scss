@@ -1,0 +1,266 @@
+// Загальні стилі
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Quicksand", "Kosugi", "Kaushan Script", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: $mainText-color;
+  .container {
+    width: 100vw;
+  }
+}
+
+// Стилі до темної і світлої тем
+
+.daytime {
+  width: 90px;
+  height: 90px;
+  margin: 0 40px 50px auto;
+  cursor: pointer;
+  &__moon,
+  &__sun {
+    width: 89px;
+    height: 71px;
+  }
+}
+.hide {
+  display: none !important;
+}
+.darkBgd {
+  background: $darkBgd-color;
+  color: $darkModeText-color;
+}
+.lightBgd {
+  background: $lightBgd-color;
+  color: $lightModeText-color;
+}
+
+//  header
+
+.header {
+  @extend %paddingForSections;
+  color: $mainText-color;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  z-index: 999;
+
+  &__logo {
+    & span {
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 60px;
+    }
+  }
+  &__logoImg {
+    height: 48px;
+  }
+  &__menu {
+    list-style-type: none;
+    display: flex;
+    gap: 35px;
+    margin: auto;
+    justify-content: space-around;
+    & a {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 40px;
+      color: $mainText-color;
+    }
+  }
+  &__menu a:hover {
+    color: $mainHover-color;
+    font-size: 35px;
+  }
+}
+
+// section home
+
+.home {
+  @extend %paddingForSections;
+  padding-top: 320px;
+  background: url(./../img/food-on-table.png) top 20% right 4% / 60% auto
+    no-repeat;
+  &__title {
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 120px;
+    margin: 0;
+    color: $mainText-color;
+  }
+  &__subtitle {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 45px;
+    text-transform: capitalize;
+    margin: 75px 0;
+  }
+  &__btn {
+    width: 191px;
+    height: 68px;
+    background: $mainText-color;
+    border-radius: 5px;
+    color: $white-color;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    border: none;
+    margin: 70px 85px 5px;
+  }
+  .home__btn:hover {
+    background: $mainHover-color;
+  }
+}
+.search {
+  &__input {
+    background: none;
+    width: 283.5px;
+    height: 48px;
+    border: 4px solid $mainText-color;
+    border-radius: 5px;
+  }
+  &__btn {
+    background: $mainText-color;
+    border-radius: 5px;
+    color: $white-color;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    &::before {
+      content: url(../img/icon-search-location.png);
+      width: 19px;
+      margin-right: 7px;
+    }
+  }
+  &__btn:hover {
+    background: $mainHover-color;
+  }
+}
+
+// section menu
+
+.menu {
+  @extend %paddingForSections;
+  background: url(./../img/half-of-pizza.png) top 160px left 0 / 25% auto
+    no-repeat;
+  &__wrapper {
+    width: 75%;
+    margin: 0 0 0 auto;
+  }
+  &__title {
+    font-family: "Kaushan Script";
+    font-size: 152px;
+    line-height: 221px;
+    align-items: center;
+    text-align: center;
+    color: $mainText-color;
+    text-transform: capitalize;
+  }
+  &__subtitle {
+    font-size: 48px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+}
+
+// /* ***sizSupplements****************** */
+// .sizSupplements {
+//   @extend %section;
+//   display: flex;
+//   /* justify-content: space-between */
+//   gap: 400px;
+// }
+// .sizSupplements__title {
+//   font-weight: 600;
+//   font-size: 64px;
+//   text-align: center;
+//   text-transform: capitalize;
+//   padding: 132px 0 0 148px;
+// }
+// .text__big {
+//   font-size: 96px;
+//   text-transform: uppercase;
+//   color: #ff8c42;
+// }
+// .sizSupplements__img {
+//   bottom: 0;
+//   position: absolute;
+//   z-index: 1;
+// }
+// .line {
+//   height: 120%;
+//   width: 21px;
+//   background: #ff8c42;
+//   transform: rotate(17deg);
+//   position: absolute;
+//   left: 934px;
+//   top: -40px;
+// }
+// .sizSupplements_right {
+//   width: 40%;
+//   position: relative;
+// }
+// .title__size,
+// .title__supplements {
+//   font-weight: 400;
+//   font-size: 48px;
+//   text-align: center;
+//   text-transform: capitalize;
+//   padding: 30px 0;
+// }
+// .pizza__size,
+// .pizza__supplements {
+//   display: flex;
+//   justify-content: space-between;
+//   font-size: 32px;
+//   padding: 15px;
+// }
+// .size__name,
+// .supplements__name {
+//   width: 55%;
+//   text-transform: capitalize;
+// }
+// .size__points,
+// .size__price,
+// .supplements__points,
+// .supplements__price {
+//   width: 15%;
+// }
+// .sizSupplements_right :nth-child(3) {
+//   margin-left: -25px;
+// }
+// .sizSupplements_right :nth-child(4) {
+//   margin-left: -50px;
+// }
+// .sizSupplements_right :nth-child(5) {
+//   margin-left: -75px;
+// }
+// .title__supplements {
+//   margin-left: -100px;
+// }
+// .sizSupplements_right :nth-child(7) {
+//   margin-left: -125px;
+// }
+// .sizSupplements_right :nth-child(8) {
+//   margin-left: -150px;
+// }
+// .sizSupplements_right :nth-child(9) {
+//   margin-left: -175px;
+// }
+// .sizSupplements_right :nth-child(10) {
+//   margin-left: -200px;
+// }

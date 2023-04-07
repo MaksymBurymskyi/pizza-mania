@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.min.css" />
+    <link rel="shortcut icon" href="./img/icon-pizza.png" type="image/x-icon" />
+    <title>Pizza Mania</title>
+  </head>
+
+  <body>
+    <div class="container darkBgd">
+      <!-- header -->
+      <header class="header darkBgd">
+        <div class="header__logo">
+          <img src="./img/logo.png" class="header__logoImg" alt="logo" />
+          <span>mania</span>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li>
+              <a href="#"
+                ><div class="baner" onclick="baner()">
+                  Specials & Coupons
+                </div></a
+              >
+            </li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- home -->
+      <section id="home">
+        <div class="home">
+          <h1 class="home__title">Pizza family</h1>
+          <p class="home__subtitle">
+            people disappoint, <br />but pizza never does.
+          </p>
+          <form class="search">
+            <input class="search__input" type="text" />
+            <button class="search__btn" type="button">search Location</button>
+          </form>
+          <button class="home__btn" type="button">Try now</button>
+          <!--  Dark Mode Toggle -->
+          <div class="daytime">
+            <img class="daytime__moon" src="img/Moon.png" alt="toggle mode" />
+            <img
+              class="daytime__sun hide"
+              src="img/Sun.png"
+              alt="toggle mode" />
+          </div>
+        </div>
+      </section>
+      <!-- menu -->
+      <section id="menu">
+        <!-- <div class="menu__img">
+          <img src="img/menu-img.png" alt="" />
+        </div> -->
+        <div class="menu">
+          <div class="menu__wrapper">
+            <h2 class="menu__title">menu</h2>
+            <h3 class="menu__subtitle">Gourmet Pizza</h3>
+            <ul class="menu__list">
+              <li class="list__name">
+                <div class="name__pizza">
+                  Pepperoni
+                  <p class="composition__pizza">
+                    mozzarella cheese, parmesan cheese, gouda cheese, smoked
+                    pepperoni cheese, gherkins
+                  </p>
+                </div>
+                <span class="price__pizza">$ 105</span>
+              </li>
+              <div class="list__name">
+                <div class="name__pizza">
+                  Four cheeses<br /><span class="composition__pizza"
+                    >azure cheese, mozzarella cheese, parmesan cheese, gouda
+                    cheese
+                  </span>
+                </div>
+                <div class="price__pizza">$ 110</div>
+              </div>
+              <div class="list__name">
+                <div class="name__pizza">
+                  With chicken and mushrooms<br /><span
+                    class="composition__pizza"
+                    >mozzarella cheese, marmesan cheese, gouda cheese, smoked
+                    pepperoni cheese, gherkins
+                  </span>
+                </div>
+                <div class="price__pizza">$ 115</div>
+              </div>
+              <div class="list__name">
+                <div class="name__pizza">
+                  Seafood<br /><span class="composition__pizza"
+                    >mozzarella cheese, marmesan cheese, gouda cheese, smoked
+                    pepperoni cheese, gherkins
+                  </span>
+                </div>
+                <div class="price__pizza">$ 120</div>
+              </div>
+              <div class="list__name">
+                <div class="name__pizza">
+                  Hawaiian<br /><span class="composition__pizza"
+                    >mozzarella cheese, marmesan cheese, gouda cheese, smoked
+                    pepperoni cheese, gherkins
+                  </span>
+                </div>
+                <div class="price__pizza">$ 125</div>
+              </div>
+
+              <div class="list__name">
+                <div class="name__pizza">
+                  Carbonara<br /><span class="composition__pizza"
+                    >mozzarella cheese, marmesan cheese, gouda cheese, smoked
+                    pepperoni cheese, gherkins
+                  </span>
+                </div>
+                <div class="price__pizza">$ 130</div>
+              </div>
+              <div class="list__name">
+                <div class="name__pizza">
+                  Diabola<br /><span class="composition__pizza"
+                    >mozzarella cheese, marmesan cheese, gouda cheese, smoked
+                    pepperoni cheese, gherkins
+                  </span>
+                </div>
+                <div class="price__pizza">$ 135</div>
+              </div>
+              <div class="list__name">
+                <div class="name__pizza">
+                  Mediterranean<br /><span class="composition__pizza"
+                    >mozzarella cheese, marmesan cheese, gouda cheese, smoked
+                    pepperoni cheese, gherkins
+                  </span>
+                </div>
+                <div class="price__pizza">$ 140</div>
+              </div>
+              <div class="list__name">
+                <div class="name__pizza">
+                  Margarity<br /><span class="composition__pizza"
+                    >mozzarella cheese, marmesan cheese, gouda cheese, smoked
+                    pepperoni cheese, gherkins
+                  </span>
+                </div>
+                <div class="price__pizza">$ 100</div>
+              </div>
+              <button class="menu_btn">Explore more</button>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- <section class="sizSupplements section">
+        <div class="sizSupplements_left">
+          <div class="sizSupplements__title">
+            Pizza
+            <span class="text__white colorBlack"
+              >of the month <br />
+              The big</span
+            >
+            <span class="text__big">bird</span>
+          </div>
+          <div class="sizSupplements__img">
+            <img src="img/hands-taking-pizza 1.png" alt="" />
+          </div>
+          <div class="line"></div>
+        </div>
+        <div class="sizSupplements_right colorBlack">
+          <div class="title__size">pizza size</div>
+          <div class="pizza__size">
+            <div class="size__name">Small pizza 20 cm</div>
+            <div class="size__points">. . . . . . .</div>
+            <div class="size__price">$ 0</div>
+          </div>
+          <div class="pizza__size">
+            <div class="size__name">Standard pizza 25 cm</div>
+            <div class="size__points">. . . . . . .</div>
+            <div class="size__price">$ 40</div>
+          </div>
+          <div class="pizza__size">
+            <div class="size__name">Medium pizza 30cm</div>
+            <div class="size__points">. . . . . . .</div>
+            <div class="size__price">$ 50</div>
+          </div>
+          <div class="pizza__size">
+            <div class="size__name">Large pizza 35 cm</div>
+            <div class="size__points">. . . . . . .</div>
+            <div class="size__price">$ 100</div>
+          </div>
+          <div class="title__supplements">Supplements</div>
+          <div class="pizza__supplements">
+            <div class="supplements__name">Mozzarella cheese</div>
+            <div class="supplements__points">. . . . . . .</div>
+            <div class="supplements__price">$ 10</div>
+          </div>
+          <div class="pizza__supplements">
+            <div class="supplements__name">Champignon</div>
+            <div class="supplements__points">. . . . . . .</div>
+            <div class="supplements__price">$ 11</div>
+          </div>
+          <div class="pizza__supplements">
+            <div class="supplements__name">Smoked chicken</div>
+            <div class="supplements__points">. . . . . . .</div>
+            <div class="supplements__price">$ 12</div>
+          </div>
+          <div class="pizza__supplements">
+            <div class="supplements__name">Hunting sausages</div>
+            <div class="supplements__points">. . . . . . .</div>
+            <div class="supplements__price">$ 13</div>
+          </div>
+        </div>
+      </section> -->
+
+      <section class="tt"></section>
+
+      <footer></footer>
+    </div>
+    <!-- Scripts -->
+    <script src="./scripts/toggleMode.js"></script>
+    <!-- <script src="./scripts/script.js"></script> -->
+    <!-- <script src="libs/sweetalert2/sweetalert2.all.min.js"></script> -->
+  </body>
+</html>
