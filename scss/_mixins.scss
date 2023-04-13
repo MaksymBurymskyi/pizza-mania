@@ -1,38 +1,10 @@
-@mixin markerLine($width, $height, $top, $left) {
-  content: "";
-  background: $white-color;
-  position: absolute;
-  z-index: 3;
-  width: $width;
-  height: $height;
-  top: $top;
-  left: $left;
+@mixin button($fontSize, $lineHeight, $topBottom, $leftRight) {
+  background: $mainText-color;
+  border-radius: 5px;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  color: $white-color;
+  padding: $topBottom $leftRight;
+  text-transform: capitalize;
+  @extend %hoverForBtns;
 }
-@mixin markerPosition($posTop, $posLeft, $animationName) {
-  top: $posTop;
-  left: $posLeft;
-  animation: $animationName 5s linear forwards;
-}
-@mixin lineWithIcon($urlIcon) {
-  @extend %underLine;
-  top: 0;
-  left: 0;
-  background-image: $urlIcon;
-}
-
-// extra mixin for home work ----->
-
-// @mixin triangle($heightTriangle, $width, $color) {
-//   position: relative;
-//   &::after {
-//     content: "";
-//     width: 0;
-//     height: 0;
-//     border-top: $heightTriangle solid $color;
-//     border-left: $width/2 solid transparent;
-//     border-right: $width/2 solid transparent;
-//     position: absolute;
-//     top: 1em;
-//     left: $width;
-//   }
-// }

@@ -2,23 +2,17 @@
   padding: 0 4%;
 }
 
-// %title {
-//   text-transform: uppercase;
-// }
-// %titleCenter {
-//   text-align: center;
-// }
-// %sectionMargin {
-//   margin: 0 auto 90px;
-// }
-// @media (max-width: 768px) {
-//   %sectionMargin {
-//     margin: 0 auto 30px;
-//   }
-// }
-// %underLine {
-//   content: "";
-//   position: absolute;
-//   width: 28px;
-//   height: 28px;
-// }
+%hoverForBtns {
+  &:hover {
+    background: $mainHover-color;
+  }
+}
+
+%formStyles {
+  border-width: 3px 1px 1px 3px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(1px);
+  border-radius: 10px;
+  box-shadow: 10px 19px 30px 5px rgba(0, 0, 0, 0.25);
+}

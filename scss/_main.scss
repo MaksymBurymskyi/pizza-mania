@@ -10,6 +10,7 @@ body {
   font-weight: normal;
   font-style: normal;
   color: $mainText-color;
+  overflow-x: hidden;
   .container {
     width: 100vw;
   }
@@ -38,6 +39,12 @@ body {
 .lightBgd {
   background: $lightBgd-color;
   color: $lightModeText-color;
+}
+.formBgdDark {
+  background: rgba(255, 255, 255, 0.05);
+}
+.formBgdLight {
+  background: rgba(217, 217, 217, 0.59);
 }
 
 //  header
@@ -78,11 +85,11 @@ body {
       font-size: 32px;
       line-height: 40px;
       color: $mainText-color;
+      &:hover {
+        font-size: 35px;
+        color: $mainHover-color;
+      }
     }
-  }
-  &__menu a:hover {
-    color: $mainHover-color;
-    font-size: 35px;
   }
 }
 
@@ -108,19 +115,9 @@ body {
     margin: 75px 0;
   }
   &__btn {
-    width: 191px;
-    height: 68px;
-    background: $mainText-color;
-    border-radius: 5px;
-    color: $white-color;
-    font-weight: 600;
-    font-size: 24px;
-    text-align: center;
-    border: none;
+    @include button(24px, 32px, 18px, 50px);
     margin: 70px 85px 5px;
-  }
-  .home__btn:hover {
-    background: $mainHover-color;
+    font-weight: 600;
   }
 }
 .search {
@@ -132,22 +129,13 @@ body {
     border-radius: 5px;
   }
   &__btn {
-    background: $mainText-color;
-    border-radius: 5px;
-    color: $white-color;
+    @include button(20px, 28px, 10px, 20px);
     font-weight: 600;
-    font-size: 20px;
-    line-height: 28px;
-    padding: 10px 20px;
-    text-transform: capitalize;
     &::before {
       content: url(../img/icon-search-location.png);
       width: 19px;
       margin-right: 7px;
     }
-  }
-  &__btn:hover {
-    background: $mainHover-color;
   }
 }
 
@@ -155,8 +143,9 @@ body {
 
 .menu {
   @extend %paddingForSections;
-  background: url(./../img/half-of-pizza.png) top 160px left 0 / 25% auto
+  background: url(./../img/half-of-pizza.png) top 160px left 0 / 25% 82%
     no-repeat;
+  font-family: Kosugi;
   &__wrapper {
     width: 75%;
     margin: 0 0 0 auto;
@@ -165,7 +154,6 @@ body {
     font-family: "Kaushan Script";
     font-size: 152px;
     line-height: 221px;
-    align-items: center;
     text-align: center;
     color: $mainText-color;
     text-transform: capitalize;
@@ -174,93 +162,233 @@ body {
     font-size: 48px;
     text-align: center;
     text-transform: capitalize;
+    margin: 20px 0 50px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  &__item {
+    width: 48%;
+  }
+  &__itemName {
+    font-size: 32px;
+    line-height: 50px;
+    padding-left: 8%;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__itemComposition {
+    width: 80%;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  &__btn {
+    display: block;
+    margin: 40px 170px 70px auto;
+    @include button(24px, 30px, 17px, 50px);
   }
 }
 
-// /* ***sizSupplements****************** */
-// .sizSupplements {
-//   @extend %section;
-//   display: flex;
-//   /* justify-content: space-between */
-//   gap: 400px;
-// }
-// .sizSupplements__title {
-//   font-weight: 600;
-//   font-size: 64px;
-//   text-align: center;
-//   text-transform: capitalize;
-//   padding: 132px 0 0 148px;
-// }
-// .text__big {
-//   font-size: 96px;
-//   text-transform: uppercase;
-//   color: #ff8c42;
-// }
-// .sizSupplements__img {
-//   bottom: 0;
-//   position: absolute;
-//   z-index: 1;
-// }
-// .line {
-//   height: 120%;
-//   width: 21px;
-//   background: #ff8c42;
-//   transform: rotate(17deg);
-//   position: absolute;
-//   left: 934px;
-//   top: -40px;
-// }
-// .sizSupplements_right {
-//   width: 40%;
-//   position: relative;
-// }
-// .title__size,
-// .title__supplements {
-//   font-weight: 400;
-//   font-size: 48px;
-//   text-align: center;
-//   text-transform: capitalize;
-//   padding: 30px 0;
-// }
-// .pizza__size,
-// .pizza__supplements {
-//   display: flex;
-//   justify-content: space-between;
-//   font-size: 32px;
-//   padding: 15px;
-// }
-// .size__name,
-// .supplements__name {
-//   width: 55%;
-//   text-transform: capitalize;
-// }
-// .size__points,
-// .size__price,
-// .supplements__points,
-// .supplements__price {
-//   width: 15%;
-// }
-// .sizSupplements_right :nth-child(3) {
-//   margin-left: -25px;
-// }
-// .sizSupplements_right :nth-child(4) {
-//   margin-left: -50px;
-// }
-// .sizSupplements_right :nth-child(5) {
-//   margin-left: -75px;
-// }
-// .title__supplements {
-//   margin-left: -100px;
-// }
-// .sizSupplements_right :nth-child(7) {
-//   margin-left: -125px;
-// }
-// .sizSupplements_right :nth-child(8) {
-//   margin-left: -150px;
-// }
-// .sizSupplements_right :nth-child(9) {
-//   margin-left: -175px;
-// }
-// .sizSupplements_right :nth-child(10) {
-//   margin-left: -200px;
-// }
+// section pizza
+
+.pizza {
+  @extend %paddingForSections;
+  background: url(./../img/delicious-pizza.png) bottom 0 left 0 / 40% auto
+    no-repeat;
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__title {
+    padding: 6.5% 0 0 4%;
+    text-align: center;
+    letter-spacing: 0.085em;
+    text-transform: capitalize;
+    font-size: 64px;
+    line-height: 80px;
+    font-weight: 600;
+    width: 55%;
+    & span {
+      color: $mainText-color;
+    }
+    & span ~ span {
+      text-transform: uppercase;
+      font-size: 96px;
+    }
+  }
+  &__listWrapper {
+    width: 45%;
+    border-left: 20px solid $mainText-color;
+    transform: skew(-27deg);
+  }
+  &__list {
+    padding: 290px 0 0 30px;
+    & li {
+      transform: skew(27deg);
+      letter-spacing: 0.085em;
+      text-transform: capitalize;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 45px;
+      padding-left: 30px;
+      margin-top: 40px;
+      position: relative;
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: $mainText-color;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  &__btnWrapper {
+    transform: skew(27deg);
+    display: block;
+    margin: 110px 0 40px auto;
+    text-align: right;
+  }
+  &__btn {
+    @include button(18px, 22px, 19px, 20px);
+    margin-left: 100px;
+    font-weight: 600;
+  }
+}
+
+// section reservation
+
+.reservation {
+  @extend %paddingForSections;
+  background: url(./../img/peppercorns.png) top 40px left 0 / 30% auto no-repeat,
+    url(./../img/spices.png) bottom -75px left 32% / 25% auto no-repeat,
+    url(./../img/lettuce.png) bottom 0 right 0 / 25% auto no-repeat,
+    url(./../img/pepper.png) top 0 left 50% / 40% auto no-repeat;
+  &__wrapper {
+    text-transform: capitalize;
+    font-size: 21px;
+    line-height: 26px;
+    text-align: right;
+    padding: 1% 4% 4%;
+  }
+  &__form {
+    width: 630px;
+    padding: 40px 80px 0 80px;
+    text-align: left;
+    font-weight: 600;
+    margin: 32px 0 76px auto;
+    @extend %formStyles;
+    & form {
+      margin: 180px 0 200px;
+    }
+    & label {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 10px;
+      justify-content: space-between;
+      height: 30px;
+      font-size: 21px;
+      line-height: 26px;
+      margin: 28px 0;
+    }
+    & input {
+      border-bottom: 2px dashed;
+    }
+  }
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.085em;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+  }
+  &__subTitle {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 0.085em;
+  }
+  &__btn {
+    @include button(21px, 26px, 10px, 30px);
+    font-weight: 600;
+    display: block;
+    margin: 76px auto 0;
+  }
+}
+
+// section contact us
+
+.contacts {
+  @extend %paddingForSections;
+  text-align: right;
+  padding: 2% 4% 4%;
+  text-transform: capitalize;
+
+  &__wrapper {
+    font-size: 21px;
+    line-height: 26px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: space-between;
+    padding: 2% 0;
+  }
+  &__registrtionBlock {
+    font-size: 25px;
+    width: 50%;
+  }
+  &__title {
+    text-align: center;
+    letter-spacing: 0.085em;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+  }
+  &__subTitle {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 0.085em;
+  }
+  &__form {
+    width: 630px;
+    padding: 40px 80px 0 80px;
+    font-weight: 600;
+    @extend %formStyles;
+    & form {
+      margin: 100px 0 160px;
+    }
+    & label {
+      display: block;
+      height: 30px;
+      font-size: 21px;
+      line-height: 26px;
+      margin: 40px 0 20px;
+    }
+    & input {
+      display: block;
+      width: 100%;
+      border-bottom: 2px dashed;
+      margin-bottom: 10px;
+    }
+  }
+  &__btn {
+    @include button(21px, 26px, 10px, 30px);
+    font-weight: 600;
+    display: block;
+    margin: 76px auto 0;
+  }
+}

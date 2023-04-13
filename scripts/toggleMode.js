@@ -4,6 +4,7 @@ const sunIcon = document.querySelector(".daytime__sun");
 const moonIcon = document.querySelector(".daytime__moon");
 const container = document.querySelector(".container");
 const header = document.querySelector(".header");
+const formBlock = document.querySelector(".reservation__form");
 const currentTime = new Date().toLocaleTimeString();
 const nightVueTime1 = new Date("Fri Mar 23 2023 19:00:00").toLocaleTimeString();
 const nightVueTime2 = new Date("Fri Mar 23 2023 06:00:00").toLocaleTimeString();
@@ -18,6 +19,8 @@ function toggleTimeMode() {
   container.classList.toggle("lightBgd");
   header.classList.toggle("darkBgd");
   header.classList.toggle("lightBgd");
+  formBlock.classList.toggle("formBgdDark");
+  formBlock.classList.toggle("formBgdLight");
 }
 
 if (currentTime < nightVueTime1 && currentTime > nightVueTime2) {

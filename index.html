@@ -12,6 +12,7 @@
   <body>
     <div class="container darkBgd">
       <!-- header -->
+
       <header class="header darkBgd">
         <div class="header__logo">
           <img src="./img/logo.png" class="header__logoImg" alt="logo" />
@@ -23,16 +24,18 @@
             <li><a href="#menu">Menu</a></li>
             <li>
               <a href="#"
-                ><div class="baner" onclick="baner()">
+                ><div class="baner" onclick="getPromoCode()">
                   Specials & Coupons
                 </div></a
               >
             </li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#ContactUs">Contact Us</a></li>
           </ul>
         </nav>
       </header>
+
       <!-- home -->
+
       <section id="home">
         <div class="home">
           <h1 class="home__title">Pizza family</h1>
@@ -54,173 +57,211 @@
           </div>
         </div>
       </section>
+
       <!-- menu -->
+
       <section id="menu">
-        <!-- <div class="menu__img">
-          <img src="img/menu-img.png" alt="" />
-        </div> -->
         <div class="menu">
           <div class="menu__wrapper">
             <h2 class="menu__title">menu</h2>
             <h3 class="menu__subtitle">Gourmet Pizza</h3>
             <ul class="menu__list">
-              <li class="list__name">
-                <div class="name__pizza">
-                  Pepperoni
-                  <p class="composition__pizza">
-                    mozzarella cheese, parmesan cheese, gouda cheese, smoked
-                    pepperoni cheese, gherkins
-                  </p>
-                </div>
-                <span class="price__pizza">$ 105</span>
+              <li class="menu__item">
+                <p class="menu__itemName">
+                  Pepperoni<span class="menu__itemPrice">$ 10.5</span>
+                </p>
+                <p class="menu__itemComposition">
+                  mozzarella cheese, parmesan cheese, gouda cheese, smoked
+                  pepperoni cheese, gherkins
+                </p>
               </li>
-              <div class="list__name">
-                <div class="name__pizza">
-                  Four cheeses<br /><span class="composition__pizza"
-                    >azure cheese, mozzarella cheese, parmesan cheese, gouda
-                    cheese
-                  </span>
-                </div>
-                <div class="price__pizza">$ 110</div>
-              </div>
-              <div class="list__name">
-                <div class="name__pizza">
-                  With chicken and mushrooms<br /><span
-                    class="composition__pizza"
-                    >mozzarella cheese, marmesan cheese, gouda cheese, smoked
-                    pepperoni cheese, gherkins
-                  </span>
-                </div>
-                <div class="price__pizza">$ 115</div>
-              </div>
-              <div class="list__name">
-                <div class="name__pizza">
-                  Seafood<br /><span class="composition__pizza"
-                    >mozzarella cheese, marmesan cheese, gouda cheese, smoked
-                    pepperoni cheese, gherkins
-                  </span>
-                </div>
-                <div class="price__pizza">$ 120</div>
-              </div>
-              <div class="list__name">
-                <div class="name__pizza">
-                  Hawaiian<br /><span class="composition__pizza"
-                    >mozzarella cheese, marmesan cheese, gouda cheese, smoked
-                    pepperoni cheese, gherkins
-                  </span>
-                </div>
-                <div class="price__pizza">$ 125</div>
-              </div>
-
-              <div class="list__name">
-                <div class="name__pizza">
-                  Carbonara<br /><span class="composition__pizza"
-                    >mozzarella cheese, marmesan cheese, gouda cheese, smoked
-                    pepperoni cheese, gherkins
-                  </span>
-                </div>
-                <div class="price__pizza">$ 130</div>
-              </div>
-              <div class="list__name">
-                <div class="name__pizza">
-                  Diabola<br /><span class="composition__pizza"
-                    >mozzarella cheese, marmesan cheese, gouda cheese, smoked
-                    pepperoni cheese, gherkins
-                  </span>
-                </div>
-                <div class="price__pizza">$ 135</div>
-              </div>
-              <div class="list__name">
-                <div class="name__pizza">
-                  Mediterranean<br /><span class="composition__pizza"
-                    >mozzarella cheese, marmesan cheese, gouda cheese, smoked
-                    pepperoni cheese, gherkins
-                  </span>
-                </div>
-                <div class="price__pizza">$ 140</div>
-              </div>
-              <div class="list__name">
-                <div class="name__pizza">
-                  Margarity<br /><span class="composition__pizza"
-                    >mozzarella cheese, marmesan cheese, gouda cheese, smoked
-                    pepperoni cheese, gherkins
-                  </span>
-                </div>
-                <div class="price__pizza">$ 100</div>
-              </div>
-              <button class="menu_btn">Explore more</button>
+              <li class="menu__item">
+                <p class="menu__itemName">
+                  Four cheeses<span class="menu__itemPrice">$ 11.0</span>
+                </p>
+                <p class="menu__itemComposition">
+                  azure cheese, mozzarella cheese, parmesan cheese, gouda cheese
+                </p>
+              </li>
+              <li class="menu__item">
+                <p class="menu__itemName">
+                  White chicken<span class="menu__itemPrice">$ 11.5</span>
+                </p>
+                <p class="menu__itemComposition">
+                  mushrooms, chicken, gouda cheese, smoked pepperoni cheese,
+                  gherkins
+                </p>
+              </li>
+              <li class="menu__item">
+                <p class="menu__itemName">
+                  Seafood<span class="menu__itemPrice">$ 12.1</span>
+                </p>
+                <p class="menu__itemComposition">
+                  mozzarella cheese, marmesan cheese, gouda cheese, smoked
+                  pepperoni cheese, gherkins
+                </p>
+              </li>
+              <li class="menu__item">
+                <p class="menu__itemName">
+                  Hawaiian<span class="menu__itemPrice">$ 12.4</span>
+                </p>
+                <p class="menu__itemComposition">
+                  mozzarella cheese, marmesan cheese, gouda cheese, smoked
+                  pepperoni cheese, gherkins
+                </p>
+              </li>
+              <li class="menu__item">
+                <p class="menu__itemName">
+                  Carbonara<span class="menu__itemPrice">$ 12.9</span>
+                </p>
+                <p class="menu__itemComposition">
+                  mozzarella cheese, marmesan cheese, gouda cheese, smoked
+                  pepperoni cheese, gherkins
+                </p>
+              </li>
+              <li class="menu__item">
+                <p class="menu__itemName">
+                  Diabola<span class="menu__itemPrice">$ 13.5</span>
+                </p>
+                <p class="menu__itemComposition">
+                  mozzarella cheese, marmesan cheese, gouda cheese, smoked
+                  pepperoni cheese, gherkins
+                </p>
+              </li>
+              <li class="menu__item">
+                <p class="menu__itemName">
+                  Mediterranean<span class="menu__itemPrice">$ 14.0</span>
+                </p>
+                <p class="menu__itemComposition">
+                  mozzarella cheese, marmesan cheese, gouda cheese, smoked
+                  pepperoni cheese, gherkins
+                </p>
+              </li>
             </ul>
+            <button class="menu__btn">Explore more</button>
           </div>
         </div>
       </section>
-      <!-- <section class="sizSupplements section">
-        <div class="sizSupplements_left">
-          <div class="sizSupplements__title">
-            Pizza
-            <span class="text__white colorBlack"
-              >of the month <br />
-              The big</span
-            >
-            <span class="text__big">bird</span>
-          </div>
-          <div class="sizSupplements__img">
-            <img src="img/hands-taking-pizza 1.png" alt="" />
-          </div>
-          <div class="line"></div>
-        </div>
-        <div class="sizSupplements_right colorBlack">
-          <div class="title__size">pizza size</div>
-          <div class="pizza__size">
-            <div class="size__name">Small pizza 20 cm</div>
-            <div class="size__points">. . . . . . .</div>
-            <div class="size__price">$ 0</div>
-          </div>
-          <div class="pizza__size">
-            <div class="size__name">Standard pizza 25 cm</div>
-            <div class="size__points">. . . . . . .</div>
-            <div class="size__price">$ 40</div>
-          </div>
-          <div class="pizza__size">
-            <div class="size__name">Medium pizza 30cm</div>
-            <div class="size__points">. . . . . . .</div>
-            <div class="size__price">$ 50</div>
-          </div>
-          <div class="pizza__size">
-            <div class="size__name">Large pizza 35 cm</div>
-            <div class="size__points">. . . . . . .</div>
-            <div class="size__price">$ 100</div>
-          </div>
-          <div class="title__supplements">Supplements</div>
-          <div class="pizza__supplements">
-            <div class="supplements__name">Mozzarella cheese</div>
-            <div class="supplements__points">. . . . . . .</div>
-            <div class="supplements__price">$ 10</div>
-          </div>
-          <div class="pizza__supplements">
-            <div class="supplements__name">Champignon</div>
-            <div class="supplements__points">. . . . . . .</div>
-            <div class="supplements__price">$ 11</div>
-          </div>
-          <div class="pizza__supplements">
-            <div class="supplements__name">Smoked chicken</div>
-            <div class="supplements__points">. . . . . . .</div>
-            <div class="supplements__price">$ 12</div>
-          </div>
-          <div class="pizza__supplements">
-            <div class="supplements__name">Hunting sausages</div>
-            <div class="supplements__points">. . . . . . .</div>
-            <div class="supplements__price">$ 13</div>
-          </div>
-        </div>
-      </section> -->
 
-      <section class="tt"></section>
+      <!-- our pizza -->
+
+      <section>
+        <div class="pizza">
+          <div class="pizza__wrapper">
+            <h2 class="pizza__title">
+              <span>pizza </span>
+              of the month<br />The big
+              <span> bird</span>
+            </h2>
+            <div class="pizza__listWrapper">
+              <ul class="pizza__list">
+                <li>Pepperoni pizza</li>
+                <li>Four cheeses pizza</li>
+                <li>White chicken pizza</li>
+                <li>Seafood pizza</li>
+                <li>Hawaiian pizza</li>
+                <li>Carbonara pizza</li>
+              </ul>
+              <div class="pizza__btnWrapper">
+                <button class="pizza__btn">Order online now</button>
+                <button class="pizza__btn">
+                  <a href="#menu">See our menu</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- reservation -->
+
+      <section>
+        <div class="reservation">
+          <div class="reservation__wrapper">
+            <div class="reservation__form formBgdDark">
+              <h3 class="reservation__title">Reservation</h3>
+              <p class="reservation__subTitle">
+                Book online or give us a call on +91 1111 222 333 <br />Between
+                9:30 am - 10:00 pm
+              </p>
+              <form action="#">
+                <label for="name"
+                  >name <input type="text" name="name" id="name"
+                /></label>
+
+                <label for="email"
+                  >email <input type="email" name="email" id="email"
+                /></label>
+
+                <label for="phone"
+                  ><div>people number</div>
+                  <input type="tel" name="phone" id="phone"
+                /></label>
+
+                <label for="date"
+                  >Date & time <input type="date" name="date" id="date"
+                /></label>
+
+                <button class="reservation__btn" type="button">
+                  Send Mail
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- contact us  -->
+
+      <section id="ContactUs">
+        <div class="contacts">
+          *terms & conditions applied.
+          <div class="contacts__wrapper">
+            <div class="contacts__registrtionBlock">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil
+              facilis, eligendi repudiandae doloribus facere rerum
+              exercitationem odio non odit aspernatur. Dolorum cumque accusamus
+              pariatur consectetur perferendis, unde inventore illum voluptates!
+              Adipisci explicabo, consectetur blanditiis laboriosam aliquam
+              error, perspiciatis voluptates voluptatibus consequuntur, ex quo.
+              Ut quidem impedit expedita, doloribus error qui pariatur. Dolorum
+              quos omnis earum velit aspernatur quod magni! Voluptates.
+            </div>
+            <div class="contacts__form formBgdDark">
+              <h3 class="contacts__title">
+                contacts <br />
+                for your order
+              </h3>
+              <p class="contacts__subTitle">
+                Book online or give us a call on +91 1111 222 333 <br />Between
+                9:30 am - 10:00 pm
+              </p>
+              <form action="#">
+                <label for="name">name </label
+                ><input type="text" name="name" id="name" />
+
+                <label for="email">email </label
+                ><input type="email" name="email" id="email" />
+
+                <label for="phone"><div>people number</div> </label
+                ><input type="tel" name="phone" id="phone" />
+
+                <label for="date">when you are waiting your order </label
+                ><input type="date" name="date" id="date" />
+                <input type="time" name="time" id="time" />
+
+                <button class="contacts__btn" type="button">Send Mail</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <footer></footer>
     </div>
     <!-- Scripts -->
+    <script src="./scripts/sweetalert2.all.min.js"></script>
     <script src="./scripts/toggleMode.js"></script>
-    <!-- <script src="./scripts/script.js"></script> -->
-    <!-- <script src="libs/sweetalert2/sweetalert2.all.min.js"></script> -->
+    <script src="./scripts/promoCode.js"></script>
   </body>
 </html>
