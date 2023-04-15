@@ -1,13 +1,23 @@
 "use strict";
 
+// даний скрипт виконує перемикання темної і світлої тем,
+// приховує хедер на останній секції.
+
 const sunIcon = document.querySelector(".daytime__sun");
 const moonIcon = document.querySelector(".daytime__moon");
 const container = document.querySelector(".container");
 const header = document.querySelector(".header");
-const formBlock = document.querySelector(".reservation__form");
+const reservationForm = document.querySelector(".reservation__form");
+const contactsForm = document.querySelector(".contacts__form");
+const aboutUsTabs = document.querySelectorAll(".aboutUs__tab");
+const footer = document.querySelector(".footer");
+
 const currentTime = new Date().toLocaleTimeString();
-const nightVueTime1 = new Date("Fri Mar 23 2023 19:00:00").toLocaleTimeString();
-const nightVueTime2 = new Date("Fri Mar 23 2023 06:00:00").toLocaleTimeString();
+const nightVueTime = new Date("Fri Mar 23 2023 19:00:00").toLocaleTimeString();
+const dayVueTime = new Date("Fri Mar 23 2023 06:00:00").toLocaleTimeString();
+
+const lastSection = document.getElementById("ContactUs");
+const lastSectionHeight = lastSection.offsetHeight;
 
 moonIcon.addEventListener("click", toggleTimeMode);
 sunIcon.addEventListener("click", toggleTimeMode);
@@ -19,10 +29,30 @@ function toggleTimeMode() {
   container.classList.toggle("lightBgd");
   header.classList.toggle("darkBgd");
   header.classList.toggle("lightBgd");
-  formBlock.classList.toggle("formBgdDark");
-  formBlock.classList.toggle("formBgdLight");
+  reservationForm.classList.toggle("formBgdDark");
+  reservationForm.classList.toggle("formBgdLight");
+  contactsForm.classList.toggle("formBgdDark");
+  contactsForm.classList.toggle("formBgdLight");
+  footer.classList.toggle("footer-darkBgd");
+  footer.classList.toggle("footer-lightBgd");
+
+  aboutUsTabs.forEach((element) => {
+    element.classList.toggle("formBgdDark");
+    element.classList.toggle("formBgdLight");
+  });
 }
 
-if (currentTime < nightVueTime1 && currentTime > nightVueTime2) {
+// додаткове перемикання теми в залежності від часу доби
+if (currentTime < nightVueTime && currentTime > dayVueTime) {
   toggleTimeMode();
 }
+
+window.addEventListener("scroll", function () {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop >= lastSection.offsetTop) {
+    header.classList.add("hidden");
+  } else {
+    header.classList.remove("hidden");
+  }
+});

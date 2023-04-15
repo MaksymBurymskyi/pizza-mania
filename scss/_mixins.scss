@@ -1,3 +1,21 @@
+@mixin stylesForLogo($containerHeigh) {
+  display: flex;
+  justify-content: space-between;
+  height: $containerHeigh;
+  align-items: center;
+
+  &__logo {
+    & span {
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 60px;
+    }
+  }
+  &__logoImg {
+    height: 48px;
+  }
+}
+
 @mixin button($fontSize, $lineHeight, $topBottom, $leftRight) {
   background: $mainText-color;
   border-radius: 5px;
@@ -7,4 +25,23 @@
   padding: $topBottom $leftRight;
   text-transform: capitalize;
   @extend %hoverForBtns;
+}
+
+@mixin stylesForMenu {
+  &__menu {
+    list-style-type: none;
+    display: flex;
+    gap: 35px;
+    justify-content: space-around;
+    & a {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 40px;
+      &:hover {
+        font-size: 35px;
+        color: $mainHover-color;
+      }
+    }
+  }
 }

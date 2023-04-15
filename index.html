@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="./css/styles.min.css" />
     <link rel="shortcut icon" href="./img/icon-pizza.png" type="image/x-icon" />
     <title>Pizza Mania</title>
@@ -217,16 +218,97 @@
         <div class="contacts">
           *terms & conditions applied.
           <div class="contacts__wrapper">
-            <div class="contacts__registrtionBlock">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil
-              facilis, eligendi repudiandae doloribus facere rerum
-              exercitationem odio non odit aspernatur. Dolorum cumque accusamus
-              pariatur consectetur perferendis, unde inventore illum voluptates!
-              Adipisci explicabo, consectetur blanditiis laboriosam aliquam
-              error, perspiciatis voluptates voluptatibus consequuntur, ex quo.
-              Ut quidem impedit expedita, doloribus error qui pariatur. Dolorum
-              quos omnis earum velit aspernatur quod magni! Voluptates.
+            <div class="aboutUs">
+              <div class="aboutUs__tab formBgdDark">
+                <input id="tab-one" type="radio" name="tabs" />
+                <label for="tab-one">Social Network</label>
+                <div class="aboutUs__tab-content">
+                  <div class="left_part">
+                    <a href="#" class="icon-button twitter"
+                      ><i class="fa-brands fa-twitter"></i><span></span
+                    ></a>
+                    <a href="#" class="icon-button telegram"
+                      ><i class="fa-brands fa-telegram"></i><span></span
+                    ></a>
+                    <a href="#" class="icon-button facebook"
+                      ><i class="fa-brands fa-facebook-f"></i><span></span
+                    ></a>
+                    <a href="#" class="icon-button instagram"
+                      ><i class="fa-brands fa-instagram"></i><span></span
+                    ></a>
+                    <a href="#" class="icon-button google-plus"
+                      ><i class="fa-brands fa-google"></i><span></span
+                    ></a>
+                  </div>
+                  <div class="right_part">
+                    <div class="share">
+                      <span>Share</span>
+                      <nav>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="aboutUs__tab formBgdDark">
+                <input id="tab-two" type="radio" name="tabs" />
+                <label for="tab-two">Aur Address</label>
+                <div class="aboutUs__tab-content">
+                  <div class="left_part">
+                    <div id="map"></div>
+                  </div>
+                  <div class="right_part">
+                    <h3>come for pizza</h3>
+                    <i class="fa-solid fa-house"></i>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Tenetur, architecto, explicabo perferendis nostrum, maxime
+                      impedit atque odit sunt pariatur illo obcaecati soluta
+                      molestias iure facere dolorum adipisci eum? Saepe, itaque.
+                    </p>
+                    <i class="fa-solid fa-phone"></i>
+                    <p>
+                      Book online or give us a call on +91 1111 222 333 <br />
+                      Between 9:30 am - 10:00 pm
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="aboutUs__tab formBgdDark">
+                <input id="tab-three" type="radio" name="tabs" />
+                <label for="tab-three">Gallery</label>
+                <div class="aboutUs__tab-content">
+                  <div class="slider">
+                    <div class="slide_viewer">
+                      <div class="slide_group">
+                        <div class="slide"></div>
+                        <div class="slide"></div>
+                        <div class="slide"></div>
+                        <div class="slide"></div>
+                        <div class="slide"></div>
+                        <div class="slide"></div>
+                        <div class="slide"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="slide_buttons"></div>
+
+                  <div class="directional_nav">
+                    <div class="previous_btn" title="Previous">
+                      <i class="fa-regular fa-circle-left fa-4xl"></i>
+                    </div>
+                    <div class="next_btn" title="Next">
+                      <i class="fa-regular fa-circle-right fa-4xl"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
             <div class="contacts__form formBgdDark">
               <h3 class="contacts__title">
                 contacts <br />
@@ -257,11 +339,38 @@
         </div>
       </section>
 
-      <footer></footer>
+      <footer class="footer footer-darkBgd">
+        <div class="footer__logo">
+          <a href="#home">
+            <img src="./img/logo.png" class="footer__logoImg" alt="logo" />
+            <span>mania</span>
+          </a>
+        </div>
+        <ul class="footer__menu">
+          <li>
+            <a href="#"><i class="fa-regular fa-circle-question"></i> help</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-user-plus"></i> sign in</a>
+          </li>
+        </ul>
+      </footer>
     </div>
+
     <!-- Scripts -->
-    <script src="./scripts/sweetalert2.all.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script src="./scripts/toggleMode.js"></script>
-    <script src="./scripts/promoCode.js"></script>
+    <script src="./scripts/slider.js"></script>
+    <script src="./scripts/promoCode.js" defer></script>
+    <script src="./scripts/sweetalert2.all.min.js" defer></script>
+    <script src="./scripts/map.js" defer></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDo-I7PntLQJQZ9oOcdiHvyszIBEgPuho&callback=initMap&v=weekly"
+      defer></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"
+      defer></script>
   </body>
 </html>

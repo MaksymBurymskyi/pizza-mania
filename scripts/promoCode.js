@@ -1,5 +1,9 @@
 "use strict";
 
+// Скрипт відповідає за модальні вікна, які показують знижку за промокодом.
+// Враховує час отримання та використання промокоду.
+// В даному варіанті для зберігання даних використовується localStorage.
+
 function showPromoCode(text, title, imageUrl, imageAlt, background, color) {
   Swal.fire({
     text: text,

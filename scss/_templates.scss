@@ -2,6 +2,10 @@
   padding: 0 4%;
 }
 
+%textCapitalize {
+  text-transform: capitalize;
+}
+
 %hoverForBtns {
   &:hover {
     background: $mainHover-color;
@@ -15,4 +19,11 @@
   backdrop-filter: blur(1px);
   border-radius: 10px;
   box-shadow: 10px 19px 30px 5px rgba(0, 0, 0, 0.25);
+}
+
+%slideBackground {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
