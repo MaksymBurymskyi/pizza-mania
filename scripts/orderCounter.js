@@ -103,6 +103,7 @@ addToOrderBtn.addEventListener("click", () => {
   const orderedItem = document.createElement("input");
   orderedItem.setAttribute("type", "text");
   orderedItem.setAttribute("name", "ordered-item");
+  orderedItem.value = `${totalPriceCell.innerText} $`;
 
   document.querySelector(".orderList").appendChild(orderedItem);
 });
