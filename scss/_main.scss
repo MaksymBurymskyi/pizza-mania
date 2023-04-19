@@ -100,7 +100,6 @@ body {
     font-weight: 600;
     font-size: 36px;
     line-height: 45px;
-    // text-transform: capitalize;
     margin: 75px 0;
   }
   &__btn {
@@ -259,7 +258,7 @@ body {
   @extend %paddingForSections;
   @extend %textCapitalize;
   background: url(./../img/peppercorns.png) top 40px left 0 / 30% auto no-repeat,
-    url(./../img/spices.png) bottom -75px left 32% / 25% auto no-repeat,
+    url(./../img/spices.png) bottom -30px left 32% / 25% auto no-repeat,
     url(./../img/lettuce.png) bottom 0 right 0 / 25% auto no-repeat,
     url(./../img/pepper.png) top 0 left 50% / 40% auto no-repeat;
   &__wrapper {
@@ -270,27 +269,11 @@ body {
   }
   &__form {
     width: 630px;
-    padding: 40px 80px 0 80px;
+    padding: 40px 80px;
     text-align: left;
     font-weight: 600;
-    margin: 32px 0 76px auto;
+    margin: 32px 0 6px auto;
     @extend %formStyles;
-    & form {
-      margin: 180px 0 200px;
-    }
-    & label {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 10px;
-      justify-content: space-between;
-      height: 30px;
-      font-size: 21px;
-      line-height: 26px;
-      margin: 28px 0;
-    }
-    & input {
-      border-bottom: 2px dashed;
-    }
   }
   &__title {
     text-align: center;
@@ -311,11 +294,144 @@ body {
     @include button(21px, 26px, 10px, 30px);
     font-weight: 600;
     display: block;
-    margin: 76px auto 0;
+    margin: 45px auto 0;
   }
 }
 
+.order {
+  margin: 60px 0 40px;
+  & h4 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 30px;
+  }
+  & label {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: space-between;
+    height: 36px;
+    font-size: 21px;
+    line-height: 26px;
+    margin: 30px 0;
+    cursor: revert;
+    & select {
+      width: 250px;
+      font-weight: 600;
+      font-size: 21px;
+      background-color: $mainText-color;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+      text-align: center;
+      color: $white-color;
+      line-height: 32px;
+    }
+  }
+  &__sortOfPizza {
+    border-left: 4px solid $mainText-color;
+    margin: 5px 0 50px;
+    & label {
+      margin: 12px 40px;
+    }
+    &-radio {
+      all: initial;
+      height: 30px;
+      width: 30px;
+      position: relative;
+      cursor: pointer;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $white-color;
+        border: 3px solid $mainText-color;
+      }
+      &:checked::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $mainText-color;
+        transform: translate(-50%, -50%);
+        visibility: visible;
+      }
+    }
+    &-cuponInp {
+      border-bottom: 2px dashed;
+      width: 100px;
+    }
+    &-cuponSale {
+      text-align: right;
+      display: flex;
+      justify-content: space-between;
+      margin: 12px 40px;
+      & span {
+        margin-left: auto;
+      }
+    }
+  }
+  &__customPizza {
+    padding: 20px 0;
+    & p {
+      font-size: 26px;
+      text-align: center;
+      margin: 0 auto 30px;
+    }
+  }
+  &__supplements {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    & label {
+      font-weight: normal;
+      font-size: 20px;
+      margin: 0px 4px;
+      cursor: pointer;
+    }
+  }
+  &__inpQantity-pizzaType {
+    width: 40px;
+    margin-left: auto;
+    border-bottom: 2px dashed;
+  }
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    &-total {
+      margin-left: auto;
+      padding: 0 5px;
+    }
+    &-button {
+      @include button(21px, 26px, 10px, 30px);
+      font-weight: 600;
+    }
+  }
+}
+.disabled {
+  @extend %disabledClass;
+}
+.checked {
+  color: $mainHover-color;
+  font-weight: 600;
+}
+
 // section contact us
+
+.orderList {
+  width: 100%;
+  max-height: fit-content;
+  @extend %formStyles;
+}
 
 .contacts {
   @extend %paddingForSections;
@@ -355,14 +471,14 @@ body {
     font-weight: 600;
     @extend %formStyles;
     & form {
-      margin: 60px 0 80px;
+      margin: 90px 0 110px;
     }
     & label {
       display: block;
       height: 30px;
       font-size: 21px;
       line-height: 26px;
-      margin: 20px 0 10px;
+      margin: 20px 0 0;
     }
     & input {
       text-transform: none;
@@ -371,261 +487,16 @@ body {
       border-bottom: 2px dashed;
       margin-bottom: 10px;
     }
+    &-error {
+      color: red;
+    }
   }
   &__btn {
     @include button(21px, 26px, 10px, 30px);
     font-weight: 600;
     display: block;
-    margin: 76px auto 0;
+    margin: 80px auto 0;
   }
-}
-
-.aboutUs {
-  width: calc(100% - 2% - 630px);
-
-  &__tab {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    @extend %formStyles;
-    margin-top: 60px;
-
-    & input {
-      position: absolute;
-      opacity: 0;
-      z-index: -1;
-    }
-    & label {
-      position: relative;
-      display: block;
-      cursor: pointer;
-      padding: 19px;
-    }
-    & input:checked ~ .aboutUs__tab-content {
-      max-height: 100%;
-    }
-    & label::after {
-      position: absolute;
-      right: 0;
-      top: 0;
-      display: block;
-      width: 3em;
-      height: 3em;
-      line-height: 3;
-      text-align: center;
-      -webkit-transition: all 0.4s;
-      transition: all 0.4s;
-    }
-    & input[type="radio"] + label::after {
-      content: "+";
-    }
-    & input[type="radio"]:checked + label::after {
-      -webkit-transform: rotate(315deg);
-      transform: rotate(315deg);
-    }
-  }
-  &__tab-content {
-    max-height: 0;
-    overflow: hidden;
-    -webkit-transition: all 1s ease-out;
-    transition: all 1s ease-out;
-    background: #ccc;
-    text-align: center;
-    color: $mainText-color;
-    & h3 {
-      margin: 0 0 10px 0;
-      padding: 5px;
-    }
-    & p {
-      text-transform: none;
-    }
-  }
-}
-
-.left_part {
-  width: 45%;
-  display: inline-block;
-  margin-right: 1%;
-  padding: 25px;
-  vertical-align: top;
-}
-.right_part {
-  width: 45%;
-  display: inline-block;
-  margin-left: 1%;
-  padding: 10px;
-  vertical-align: top;
-}
-
-@media screen and (max-width: 500px) {
-  .left_part,
-  .right_part {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-.icon-button {
-  background-color: white;
-  border-radius: 3.6rem;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 2rem;
-  height: 3.6rem;
-  line-height: 3.6rem;
-  margin: 0 5px;
-  position: relative;
-  text-align: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 3.6rem;
-}
-
-.icon-button span {
-  border-radius: 0;
-  display: block;
-  height: 0;
-  left: 50%;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  width: 0;
-}
-.icon-button:hover span {
-  width: 3.6rem;
-  height: 3.6rem;
-  border-radius: 3.6rem;
-  margin: -1.8rem;
-}
-.twitter span {
-  background-color: #4099ff;
-}
-.telegram span {
-  background-color: #28a5e5;
-}
-.facebook span {
-  background-color: #3b5998;
-}
-.google-plus span {
-  background-color: #db5a3c;
-}
-.instagram span {
-  background-color: #f70808;
-}
-
-.icon-button i {
-  background: none;
-  color: white;
-  height: 3.6rem;
-  left: 0;
-  line-height: 3.6rem;
-  position: absolute;
-  top: 0;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  width: 3.6rem;
-  z-index: 10;
-}
-.icon-button .fa-twitter {
-  color: #4099ff;
-}
-.icon-button .fa-telegram {
-  color: #28a5e5;
-}
-.icon-button .fa-instagram {
-  color: #f70808;
-}
-.icon-button .fa-google {
-  color: #db5a3c;
-}
-.icon-button .fa-facebook-f {
-  color: #3b5998;
-}
-.icon-button:hover .fa-twitter,
-.icon-button:hover .fa-telegram,
-.icon-button:hover .fa-google,
-.icon-button:hover .fa-facebook-f,
-.icon-button:hover .fa-instagram {
-  color: white;
-}
-
-.share span {
-  width: 200px;
-  line-height: 90px;
-  display: inline-block;
-  font-weight: 700;
-  text-transform: uppercase;
-  position: absolute;
-  margin-left: -100px;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-  pointer-events: none;
-}
-.share nav {
-  font-size: 0;
-}
-.share a {
-  line-height: 80px;
-  width: 80px;
-  text-align: center;
-  display: inline-block;
-  background-color: #ffffff;
-  color: #ffffff;
-  overflow: hidden;
-  opacity: 1;
-  transition: all 0.3s ease-in-out;
-  margin: 0 -20px;
-  box-shadow: 3px 1px 3px rgba(0, 0, 0, 0.1);
-}
-.share a:nth-child(1) {
-  border-top-left-radius: 40px;
-  border-bottom-left-radius: 40px;
-  margin-left: 0;
-}
-.share a:nth-child(1):hover {
-  background-color: #61c5ec;
-}
-.share a:nth-child(2):hover {
-  background-color: #3b5998;
-}
-.share a:nth-child(3):hover {
-  background-color: #28a5e5;
-}
-.share a:nth-child(4) {
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-  margin-right: 0;
-}
-.share a:nth-child(4):hover {
-  background-color: #f70808;
-}
-.share:hover span,
-.share.hover span {
-  opacity: 0;
-}
-.share:hover a,
-.share.hover a {
-  border-radius: 50%;
-  margin: 0 10px;
-  color: #f1ce64;
-  font-size: 28px;
-}
-.share:hover a:hover,
-.share.hover a:hover {
-  color: #fff;
-}
-
-#map {
-  height: 400px;
-  width: 100%;
 }
 
 .footer {

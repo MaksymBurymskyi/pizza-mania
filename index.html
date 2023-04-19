@@ -134,7 +134,7 @@
                   Mediterranean<span class="menu__itemPrice">$ 14.0</span>
                 </p>
                 <p class="menu__itemComposition">
-                  mozzarella cheese, marmesan cheese, gouda cheese, smoked
+                  mozzarella cheese, parmesan cheese, gouda cheese, smoked
                   pepperoni cheese, gherkins
                 </p>
               </li>
@@ -164,7 +164,9 @@
                 <li>Carbonara pizza</li>
               </ul>
               <div class="pizza__btnWrapper">
-                <button class="pizza__btn">Order online now</button>
+                <button class="pizza__btn">
+                  <a href="#reservation">Order online now</a>
+                </button>
                 <button class="pizza__btn">
                   <a href="#menu">See our menu</a>
                 </button>
@@ -176,7 +178,7 @@
 
       <!-- reservation -->
 
-      <section>
+      <section id="reservation">
         <div class="reservation">
           <div class="reservation__wrapper">
             <div class="reservation__form formBgdDark">
@@ -185,26 +187,151 @@
                 Book online or give us a call on +91 1111 222 333 <br />Between
                 9:30 am - 10:00 pm
               </p>
-              <form action="#">
-                <label for="name"
-                  >name <input type="text" name="name" id="name"
-                /></label>
+              <form class="order" action="#">
+                <h4>choise your favorit pizza</h4>
+                <div class="order__sortOfPizza">
+                  <label for="pizzaByMenu"
+                    >Pizza by Menu<input
+                      class="order__sortOfPizza-radio"
+                      type="radio"
+                      name="pizzaBy"
+                      id="pizzaByMenu"
+                      value="pizzaByMenu"
+                      checked
+                  /></label>
+                  <label for="customPizza"
+                    >Custom Pizza<input
+                      class="order__sortOfPizza-radio"
+                      type="radio"
+                      name="pizzaBy"
+                      id="customPizza"
+                      value="customPizza"
+                  /></label>
+                  <label for="cuponInp"
+                    >enter your coupon here -
+                    <input
+                      class="order__sortOfPizza-cuponInp"
+                      type="text"
+                      name="cuponInp"
+                      id="cuponInp"
+                  /></label>
+                  <p class="order__sortOfPizza-cuponSale">
+                    your sale is -
+                    <span id="cuponSale">0</span>%
+                  </p>
+                </div>
+                <label for="pizzaType"
+                  >Pizza type:
+                  <select id="pizzaType" class="order__pizzaType">
+                    <option value="0">Select</option>
+                    <option value="10.5">Pepperoni</option>
+                    <option value="11">Four Cheeses</option>
+                    <option value="11.5">White Chicken</option>
+                    <option value="12.1">Seafood</option>
+                    <option value="12.4">Hawaiian</option>
+                    <option value="12.9">Carbonara</option>
+                    <option value="13.5">Diabola</option>
+                    <option value="14">Mediterranean</option>
+                  </select></label
+                >
+                <label for="pizzaSize"
+                  >Pizza size:
+                  <select id="pizzaSize" class="order__pizzaSize">
+                    <option value="1">Standard 25 cm</option>
+                    <option value="0.9">Small 20 cm</option>
+                    <option value="1.1">Large 35 cm</option>
+                  </select></label
+                >
+                <div class="order__customPizza disabled">
+                  <p>Supplements for custom pizza</p>
+                  <div class="order__supplements">
+                    <label for="chicken" class="order__supplements-item"
+                      >Chicken<input
+                        type="checkbox"
+                        name="chicken"
+                        id="chicken"
+                        value="2.2"
+                        disabled
+                    /></label>
 
-                <label for="email"
-                  >email <input type="email" name="email" id="email"
-                /></label>
+                    <label for="mushrooms" class="order__supplements-item"
+                      >Mushrooms<input
+                        type="checkbox"
+                        name="mushrooms"
+                        id="mushrooms"
+                        value="2.4"
+                        disabled
+                    /></label>
+                    <label for="corn" class="order__supplements-item"
+                      >Corn<input
+                        type="checkbox"
+                        name="corn"
+                        id="corn"
+                        value="1.6"
+                        disabled
+                    /></label>
+                    <label for="pineapple" class="order__supplements-item"
+                      >Pineapple<input
+                        type="checkbox"
+                        name="pineapple"
+                        id="pineapple"
+                        value="2.2"
+                        disabled
+                    /></label>
+                    <label for="tomato" class="order__supplements-item"
+                      >Tomato<input
+                        type="checkbox"
+                        name="tomato"
+                        id="tomato"
+                        value="1.8"
+                        disabled
+                    /></label>
+                    <label for="gouda" class="order__supplements-item"
+                      >Gouda<input
+                        type="checkbox"
+                        name="gouda"
+                        id="gouda"
+                        value="2.2"
+                        disabled
+                    /></label>
+                    <label for="mozzarella" class="order__supplements-item"
+                      >Mozzarella<input
+                        type="checkbox"
+                        name="mozzarella"
+                        id="mozzarella"
+                        value="2"
+                        disabled
+                    /></label>
+                    <label for="olives" class="order__supplements-item"
+                      >Olives<input
+                        type="checkbox"
+                        name="olives"
+                        id="olives"
+                        value="1.9"
+                        disabled
+                    /></label>
+                  </div>
+                </div>
+                <label for="quantity-pizzaType"
+                  >quantity<input
+                    class="order__inpQantity-pizzaType"
+                    type="number"
+                    name="quantity-pizzaType"
+                    id="quantity-pizzaType"
+                    value="0" />
 
-                <label for="phone"
-                  ><div>people number</div>
-                  <input type="tel" name="phone" id="phone"
-                /></label>
+                  <span class="order__qantity-pizzaType"> pcs </span></label
+                >
 
-                <label for="date"
-                  >Date & time <input type="date" name="date" id="date"
-                /></label>
+                <div class="order__price">
+                  <button class="order__price-button" type="button">
+                    Total price
+                  </button>
+                  <span class="order__price-total">0 </span> $
+                </div>
 
                 <button class="reservation__btn" type="button">
-                  Send Mail
+                  add to order
                 </button>
               </form>
             </div>
@@ -219,8 +346,13 @@
           *terms & conditions applied.
           <div class="contacts__wrapper">
             <div class="aboutUs">
+              <div class="orderList"></div>
               <div class="aboutUs__tab formBgdDark">
-                <input id="tab-one" type="radio" name="tabs" />
+                <input
+                  class="aboutUs__tab-checker"
+                  id="tab-one"
+                  type="radio"
+                  name="tabs" />
                 <label for="tab-one">Social Network</label>
                 <div class="aboutUs__tab-content">
                   <div class="left_part">
@@ -254,7 +386,11 @@
                 </div>
               </div>
               <div class="aboutUs__tab formBgdDark">
-                <input id="tab-two" type="radio" name="tabs" />
+                <input
+                  class="aboutUs__tab-checker"
+                  id="tab-two"
+                  type="radio"
+                  name="tabs" />
                 <label for="tab-two">Aur Address</label>
                 <div class="aboutUs__tab-content">
                   <div class="left_part">
@@ -278,7 +414,11 @@
                 </div>
               </div>
               <div class="aboutUs__tab formBgdDark">
-                <input id="tab-three" type="radio" name="tabs" />
+                <input
+                  class="aboutUs__tab-checker"
+                  id="tab-three"
+                  type="radio"
+                  name="tabs" />
                 <label for="tab-three">Gallery</label>
                 <div class="aboutUs__tab-content">
                   <div class="slider">
@@ -314,25 +454,45 @@
                 contacts <br />
                 for your order
               </h3>
-              <p class="contacts__subTitle">
-                Book online or give us a call on +91 1111 222 333 <br />Between
-                9:30 am - 10:00 pm
-              </p>
+
               <form action="#">
-                <label for="name">name </label
-                ><input type="text" name="name" id="name" />
+                <label for="name"
+                  >name :
+                  <span class="contacts__form-error nameErr"></span></label
+                ><input type="text" name="name" id="name" required />
 
-                <label for="email">email </label
-                ><input type="email" name="email" id="email" />
+                <label for="email"
+                  >email :
+                  <span class="contacts__form-error emailErr"></span></label
+                ><input type="email" name="email" id="email" required />
 
-                <label for="phone"><div>people number</div> </label
-                ><input type="tel" name="phone" id="phone" />
+                <label for="phone"
+                  >people number :
+                  <span class="contacts__form-error phoneErr"></span></label
+                ><input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  value="+380"
+                  required />
 
-                <label for="date">when you are waiting your order </label
-                ><input type="date" name="date" id="date" />
-                <input type="time" name="time" id="time" />
+                <label for="date">Date & time : </label
+                ><input id="date" type="text" name="date" value="" />
 
-                <button class="contacts__btn" type="button">Send Mail</button>
+                <label for="date">when you are waiting your order : </label
+                ><input
+                  type="date"
+                  name="order-date"
+                  id="order-date"
+                  placeholder="date" />
+                <input type="time" name="time" id="time" placeholder="time" />
+
+                <button
+                  class="contacts__btn"
+                  type="submit"
+                  onclick="handleSubmit(event)">
+                  Send Mail
+                </button>
               </form>
             </div>
           </div>
@@ -358,13 +518,18 @@
     </div>
 
     <!-- Scripts -->
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="./scripts/toggleMode.js"></script>
-    <script src="./scripts/slider.js"></script>
-    <script src="./scripts/promoCode.js" defer></script>
+    <script src="./scripts/script.js"></script>
+
+    <script src="./scripts/validation.js"></script>
+
     <script src="./scripts/sweetalert2.all.min.js" defer></script>
+    <script src="./scripts/promoCode.js" defer></script>
+    <script src="./scripts/orderCounter.js" defer></script>
+    <script src="./scripts/tab-checker.js" defer></script>
+    <script src="./scripts/slider.js" defer></script>
     <script src="./scripts/map.js" defer></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDo-I7PntLQJQZ9oOcdiHvyszIBEgPuho&callback=initMap&v=weekly"
