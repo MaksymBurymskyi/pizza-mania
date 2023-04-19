@@ -2,7 +2,16 @@
 
 // Скрипт відповідає за модальні вікна, які показують знижку за промокодом.
 // Враховує час отримання та використання промокоду.
+// Передає відсоток знижки до форми.
 // В даному варіанті для зберігання даних використовується localStorage.
+
+const cuponInp = document.getElementById("cuponInp");
+const cuponSale = document.getElementById("cuponSale");
+
+const currentDate = new Date();
+const oneMonts = 2630000000;
+const savedDate = new Date(localStorage.promoCodeData);
+const expDate = currentDate - savedDate;
 
 function showPromoCode(text, title, imageUrl, imageAlt, background, color) {
   Swal.fire({
@@ -14,6 +23,18 @@ function showPromoCode(text, title, imageUrl, imageAlt, background, color) {
     imageAlt: imageAlt,
     background: background,
     color: color,
+    confirmButtonColor: "#FF8C42",
+  });
+}
+
+function showErrPromoCode() {
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Something went wrong!",
+    footer: "Try again later",
+    background: "#f4f4f4",
+    color: "#7b3000",
     confirmButtonColor: "#FF8C42",
   });
 }
@@ -46,10 +67,6 @@ function getPromoCode() {
       "#7b3000"
     );
   } else if (+localStorage.promoCode) {
-    const currentDate = new Date();
-    const oneMonts = 2630000000;
-    const savedDate = new Date(localStorage.promoCodeData);
-    const expDate = currentDate - savedDate;
     if (expDate < oneMonts) {
       showPromoCode(
         `You already have the promo code ${localStorage.promoCode}`,
@@ -71,15 +88,28 @@ function getPromoCode() {
       localStorage.clear();
     }
   } else {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Something went wrong!",
-      footer: "Try again later",
-      background: "#f4f4f4",
-      color: "#7b3000",
-      confirmButtonColor: "#FF8C42",
-    });
+    showErrPromoCode();
     localStorage.clear();
   }
 }
+
+function setSalePercent(event) {
+  const promoCode = event.target.value;
+  if (!promoCode) {
+    cuponSale.innerText = 0;
+  } else if (+promoCode != +localStorage.promoCode) {
+    cuponSale.innerText = "invalid code - " + 0;
+  } else if (+promoCode === +localStorage.promoCode) {
+    if (+localStorage.promoCode === 0) {
+      cuponSale.innerText = "code has been used - " + 0;
+    } else if (expDate > oneMonts) {
+      cuponSale.innerText = "deprecated code - " + 0;
+    } else {
+      cuponSale.innerText = 10;
+    }
+  } else {
+    showErrPromoCode();
+  }
+}
+
+cuponInp.addEventListener("blur", setSalePercent);
